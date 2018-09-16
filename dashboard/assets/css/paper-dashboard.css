@@ -14,6 +14,10 @@
  
  */
 /*      light colors - used for select dropdown         */
+@font-face {
+    font-family: "sfp";
+    src: url("/dashboard/assets/fonts/SofiaProRegular.6ad63661.ttf")
+}
 .ct-blue {
   stroke: #7A9E9F !important; }
 
@@ -32,7 +36,7 @@
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Muli', "Helvetica", Arial, sans-serif; }
+  font-family: 'sfp', "Helvetica", Arial, sans-serif; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-weight: 400;
@@ -140,7 +144,7 @@ strong {
 body {
   color: #66615b;
   font-size: 14px;
-  font-family: 'Muli', Arial, sans-serif; }
+  font-family: 'sfp', Arial, sans-serif; }
   body .wrapper {
     min-height: 100vh;
     position: relative; }
@@ -253,12 +257,12 @@ hr {
       line-height: 20px; }
     .sidebar .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text {
-      text-transform: uppercase;
+      
       padding: 4px 0px;
       display: block;
-      font-size: 18px;
-      text-align: center;
-      font-weight: 400;
+      font-size: 36px;
+      
+      font-weight: 800;
       line-height: 30px; }
   .sidebar .nav,
   .off-canvas-sidebar .nav {
@@ -340,7 +344,7 @@ hr {
     .sidebar .logo .simple-text, .sidebar[data-background-color="white"] .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text,
     .off-canvas-sidebar[data-background-color="white"] .logo .simple-text {
-      color: #66615B; }
+      color: #E8554E; }
   .sidebar .nav li:not(.active) > a, .sidebar[data-background-color="white"] .nav li:not(.active) > a,
   .off-canvas-sidebar .nav li:not(.active) > a,
   .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
@@ -1613,7 +1617,7 @@ textarea.form-control {
   width: 190px; }
 
 .card-map .map {
-  height: 500px;
+  height: 80vh;
   padding-top: 20px; }
   .card-map .map > div {
     height: 100%; }

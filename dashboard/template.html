@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Paper Dashboard by Creative Tim</title>
+    <title>ResQ Disaster Relief</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -32,6 +32,14 @@
     firebase.initializeApp(config);
     </script>
     <style>
+        .listy {
+        
+            list-style: none;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 26px;
+    padding-bottom: 14px;
+        }
     .content {
         padding-bottom: 1.5em!important;
     }
@@ -76,6 +84,31 @@
     .limited{
         max-height: 30em;
         overflow: scroll;
+    }
+
+    img {
+        border-style: none;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    button,
+    select {
+        text-transform: none;
     }
 
     </style>
@@ -157,7 +190,7 @@
                                     <p>Likely natural disaster</p>
                                 </div>
                                 <div class="content">
-                                    content stuff
+                                    <img src="/dashboard/assets/img/disaster_map.jpg">
                                 </div>
                             </div>
                         </div>
@@ -167,9 +200,14 @@
                             <div class="card ">
                                 <div class="header">
                                     <p><b>Supplies You Need</b></p>
-                                </div>
-                                <div class="content">
-                                    <ul id="supplylist"></ul>
+                                     <ul class="listy">
+                                        <li>First aid kit</li>
+                                        <li>Food & Water</li>
+                                        <li>Flashlight</li>
+                                        <li>Toiletries</li>
+                                        <li>Blankets</li>
+                                        <li>Miscellaneous</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
