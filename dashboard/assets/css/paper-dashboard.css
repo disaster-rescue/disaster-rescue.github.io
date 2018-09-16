@@ -257,12 +257,12 @@ hr {
       line-height: 20px; }
     .sidebar .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text {
-      text-transform: uppercase;
+      
       padding: 4px 0px;
       display: block;
-      font-size: 18px;
-      text-align: center;
-      font-weight: 400;
+      font-size: 36px;
+      
+      font-weight: 800;
       line-height: 30px; }
   .sidebar .nav,
   .off-canvas-sidebar .nav {
@@ -344,7 +344,7 @@ hr {
     .sidebar .logo .simple-text, .sidebar[data-background-color="white"] .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text,
     .off-canvas-sidebar[data-background-color="white"] .logo .simple-text {
-      color: #66615B; }
+      color: #E8554E; }
   .sidebar .nav li:not(.active) > a, .sidebar[data-background-color="white"] .nav li:not(.active) > a,
   .off-canvas-sidebar .nav li:not(.active) > a,
   .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
