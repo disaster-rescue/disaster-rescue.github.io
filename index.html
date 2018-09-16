@@ -169,7 +169,7 @@ color: white;
                 <li><a href="/maps.html">Disaster Map</a></li>
                 <li><a href="/analytics.html">Analytics</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li style="margin-left: 35% !important;"><a href="/login.html">Login</a></li>
+                <li id="login" style="margin-left: 35% !important;"><a href="/signup.html">Login</a></li>
                 <li style="margin-left:40px;"><a href="/signup.html">Sign Up</a></li>
             </ul>
         </nav>
@@ -196,6 +196,19 @@ color: white;
     </div>
 
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#login").click(function() {
+                Storage.setItem("login", "true");
+                console.log("true");
+            
+            });
+        
+        });
+        
+        
+    </script>
 
 
 </html>
