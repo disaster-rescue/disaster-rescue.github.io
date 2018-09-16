@@ -49,14 +49,15 @@ function checkUser(userid) {
 }
 
 function goToDashboard(userid) {
-    sessionStorage.setItem("userid", userid);
+    window.localStorage.setItem("userid", userid);
     window.location.href = 'https://disaster-rescue.github.io/dashboard/template.html'
     //alert(userid + " going to dashboard");
 }
 
 function goToSetup(userid) {
-    sessionStorage.setItem("userid", userid);
+    window.localStorage.setItem("userid", userid);
     //should go to "chatbot"
+    window.localStorage.setItem("name",name);
     window.location.href = 'http://localhost:3000/'
 }
 
@@ -71,7 +72,7 @@ $(function() {
         }
     });
 
-    var login = sessionStorage.getItem("logined");
+    var login = window.localStorage.getItem("logined");
     console.log(login);
     
     if(login === "true"){
@@ -109,6 +110,7 @@ $(function() {
         var userid = $("#inputPhone").val();
         var password = $("#inputPassword").val();
         var name = $("#inputName").val();
+        window.localStorage.setItem("name",name);
         signup(userid, name, password);
     });
 
@@ -120,6 +122,8 @@ $(function() {
     $('#yes').click(function() {
         //do stuff to nagivate to set up
         database.ref("users/" + user + "/location").set(loc);
-        sessionStorage.setItem("userid", user);
+        window.localStorage.setItem("location",loc["name"]);
+        window.localStorage.setItem("userid", user);
+        console.log(window.localStorage);
     })
 });

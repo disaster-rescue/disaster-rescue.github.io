@@ -3,6 +3,16 @@ var data = {
         "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
 }
 
+function onloadSave(){
+  var winStorage = window.localStorage;
+  var havesupplies = winStorage.getItem("havesupplies");
+  console.log(havesupplies);
+  var userId = sessionStorage.getItem("userid");
+  firebase.database().ref('users/' + userId+'/supplies').set({
+    have: supplieshave
+  });
+}
+
 function generateSupplyList(val) {
     var listof = data['massachusetts'];
     doit(listof, val);
@@ -33,6 +43,12 @@ function generateRequestedList(listof){
 
 $(function() {
     var userid = sessionStorage.getItem('userid');
+    var winStorage = window.localStorage;
+    var havesupplies = winStorage.getItem("havesupplies");
+    console.log(havesupplies);
+    firebase.database().ref('users/' + userid+'/supplies').set({
+      supplies: supplieshave
+    });
 
     var data = {
         "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
