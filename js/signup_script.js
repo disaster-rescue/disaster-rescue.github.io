@@ -70,10 +70,10 @@ $(function() {
         }
     });
 
-    var login = localStorage.getItem("logined");
-
+    var login = sessionStorage.getItem("logined");
+    console.log(login);
     
-    if(login){
+    if(login === true){
         $(".location").hide();
         $("#register").hide();
         $("#register-header").hide();
@@ -82,6 +82,7 @@ $(function() {
         $("#inputName").hide();
 
     } else{
+
         $(".location").hide();
         $("#register").show();
         $("#register-header").show();
