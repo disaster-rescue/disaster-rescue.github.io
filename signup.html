@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>setup</title>
+    <style></style>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+    var config = {
+        apiKey: "AIzaSyB2tHG_FOrofs7uOvi4YhYLdnySQcH9sUc",
+        authDomain: "resqueq.firebaseapp.com",
+        databaseURL: "https://resqueq.firebaseio.com",
+        projectId: "resqueq",
+        storageBucket: "",
+        messagingSenderId: "345720470023"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="firebase_database.js"></script>
+    <script src="location.js"></script>
+    <script src="signup_script.js"></script>
+</head>
+
+<body class="signuppage">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h1 class="align-center lower-weight">Welcome to ResQ</h1>
+            </div>
+        </div>
+        <div class="row vert-blank-15px"></div>
+        <div class="row justify-content-center">
+            <h2 id="register-header" class="lower-weight">Register <img src="assets/register.svg" height="30px" width="30px"></h2>
+            <h2 id="signin-header" class="lower-weight">Sign In  <img src="assets/log-in.svg" height="30px" width="30px"></h2>
+        </div>
+        <div class="row vert-blank-10px"></div>
+        <div class="location">
+            <div class="row location justify-content-center">
+                <div class="loader"></div>
+                <div class="info"></div>
+            </div>
+            <div class="row vert-blank-15px"></div>
+            <div class="row vert-blank-15px"></div>
+            <div class="row confirm location justify-content-center">
+                <div class="col-md-3">
+                    <button type="button" id="yes" class="btn btn-primary">Yes</button>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" id="no" class="btn btn-primary">No</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center panel">
+            <div class="col-md-4">
+                <form id="form">
+                    <div class="form-group" id="phone-num">
+                        <input class="form-control" id="inputPhone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group" id="name">
+                        <input class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                    <div class="form-group" id="password">
+                        <input class="form-control" id="inputPassword" type="password" placeholder="Password">
+                    </div>
+                    <button type="button" id="register" class="btn btn-primary">Let's Start!</button>
+                    <button type="button" id="signin" class="btn btn-primary">Sign in!</button>
+                    <hr/>
+                    <p id="toggle" class="align-center">Already have an account?</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

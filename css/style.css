@@ -1,0 +1,70 @@
+button {
+    width: 100%;
+    background-color: #e5624e!important;
+    border: 0px !important;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white!important;
+    opacity: 0.6!important;/* Firefox */
+}
+
+body.signuppage{
+    padding: 5%;
+    padding-top: 10%;
+    color: rgb(255, 255, 255)!important;
+    font-family: 'Muli', 'Helvetica', 'sans-serif';
+    background-image: url("forest_medium.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.lower-weight{
+    font-weight: 400!important;
+}
+
+.vert-blank-15px {
+    height: 15px;
+}
+
+.vert-blank-10px {
+    height: 10px;
+}
+
+.align-center {
+    text-align: center
+}
+
+.form-control {
+    color: white!important;
+    background-color: rgba(255, 255, 255, 0.3)!important;
+    border: 0px !important;
+}
+
+.loader {
+  border: 12px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 12px solid white;
+  width: 75px;
+  height: 75px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

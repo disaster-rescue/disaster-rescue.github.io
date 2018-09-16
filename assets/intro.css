@@ -1,0 +1,118 @@
+body{
+    background-image: url("../darker_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.title{
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    padding: .5rem 1rem;
+}
+.row{
+    width:100%;
+    bottom:40%;
+    left:20%;
+    position:fixed;
+    align-items: center;
+}
+.intro{
+    margin-left:50px;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-size: 4rem;
+    color:white;
+}
+.container {
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn-haha{
+    margin-left: 80px;
+}
+.btn-hehe{
+    margin-left: 50px;
+}
+.btn-hehe:hover{
+    background-color: #ffefa9 !important;
+    margin-left:50px;
+}
+.btn-xl {
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px 45px;
+    border-radius: 300px;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff !important;
+    border: 1px solid;
+    border-color: #fff;
+
+}
+.btn-hoho{
+    margin-left:165px;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px 45px;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    letter-spacing: 2px;
+    color: #fff !important;
+    border: 1px solid;
+    border-color: #fff;
+}
+.btn-hoho:hover{
+    text-align: center;
+    border: 1px solid transparent;
+    background-color: #ffade0;
+    transition: color .15s
+        ease-in-out,background-color .3s
+        ease-in-out,border-color .3s
+        ease-in-out,box-shadow .3s
+        ease-in-out;
+    color:black!important;
+}
+.btn-hihi{
+    margin-left:140px;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px 45px;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    letter-spacing: 2px;
+    color: #fff !important;
+    border: 1px solid;
+    border-color: #fff;
+}
+.btn-hihi:hover{
+        text-align: center;
+    border: 1px solid transparent;
+    background-color: #b1ffee;
+    transition: color .15s
+        ease-in-out,background-color .3s
+        ease-in-out,border-color .3s
+        ease-in-out,box-shadow .3s
+        ease-in-out;
+    color:black!important;
+}
+.btn-xl:hover {
+    text-align: center;
+    border: 1px solid transparent;
+    background-color: white;
+    transition: color .15s
+        ease-in-out,background-color .3s
+        ease-in-out,border-color .3s
+        ease-in-out,box-shadow .3s
+        ease-in-out;
+    color:black!important;
+}
+.j1 {
+    margin-bottom: 4rem;
+}
