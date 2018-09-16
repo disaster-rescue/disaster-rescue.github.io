@@ -57,7 +57,7 @@ function goToDashboard(userid) {
 function goToSetup(userid) {
     sessionStorage.setItem("userid", userid);
     //should go to "chatbot"
-    window.location.href = 'https://disaster-rescue.github.io/dashboard/template.html'
+    window.location.href = 'http://localhost:3000/'
 }
 
 function signalNoUser() {
