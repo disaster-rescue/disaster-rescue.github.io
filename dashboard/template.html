@@ -72,7 +72,37 @@
     .card .content {
         padding-top: 0px !important;
     }
-         [type=reset],
+        a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    img {
+        border-style: none;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        font-family: sans-serif;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    button,
+    select {
+        text-transform: none;
+    }
+
+    [type=reset],
     [type=submit],
     button,
     html [type=button] {
@@ -100,7 +130,137 @@
         box-sizing: border-box;
         padding: 0;
     }
-        
+
+    *,
+    :after,
+    :before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Rubik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        letter-spacing: .02em;
+        color: #000;
+        background: #fff;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        text-decoration: none;
+        color: #57eaa6;
+        border-bottom: 1px solid #57eaa6;
+        text-shadow: 0 1px 0 #585afa;
+    }
+
+    a:hover {
+        border-bottom: 2px solid #bf6bfe;
+    }
+
+    ::-moz-selection {
+        background: rgba(33, 16, 118, 0.75);
+        text-shadow: none;
+    }
+
+    ::selection {
+        background: rgba(33, 16, 118, 0.75);
+        text-shadow: none;
+    }
+
+    .title {
+        font-size: 3.5em;
+        font-weight: 500;
+        margin: .5em .2em .375em;
+        text-align: center;
+    }
+
+    .title a {
+        color: #e6e6e6;
+        border: 0;
+    }
+
+    .progress {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .progress__count {
+        font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        font-size: 1.15em;
+        letter-spacing: .05em;
+    }
+
+    .progress__reset {
+        font-family: inherit;
+        line-height: 37px;
+        display: inline-block;
+        height: 37px;
+        margin-left: .75em;
+        padding: 0 14px;
+        cursor: pointer;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        letter-spacing: .025em;
+        color: inherit;
+        border: 1px solid #211076;
+        border-radius: 3px;
+        outline: 0;
+        background: rgba(33, 16, 118, 0.75);
+        -webkit-box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+        box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+    }
+
+    .progress__reset:focus,
+    .progress__reset:hover {
+        background: rgba(189, 106, 255, 0.8);
+        -webkit-box-shadow: 0 7px 14px rgba(33, 16, 118, 0.16), 0 3px 6px rgba(33, 16, 118, 0.2);
+        box-shadow: 0 7px 14px rgba(33, 16, 118, 0.16), 0 3px 6px rgba(33, 16, 118, 0.2);
+    }
+
+    .progress__reset:active {
+        -webkit-box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+        box-shadow: 0 4px 6px rgba(33, 16, 118, 0.11), 0 1px 3px rgba(33, 16, 118, 0.1);
+    }
+
+
+    /* .progress__border {
+        display: block;
+        margin-top: 12px;
+        border-bottom: 3px solid #57d490;
+        -webkit-box-shadow: 0 20px 20px -20px rgba(33, 16, 118, 0.65);
+        box-shadow: 0 20px 20px -20px rgba(33, 16, 118, 0.65);
+    } */
+
+    .progress__bar {
+        display: block;
+        height: 2px;
+        -webkit-transition: -webkit-transform 0.5s ease;
+        transition: -webkit-transform 0.5s ease;
+        -webkit-transition: -webkit-transform .5s ease;
+        transition: -webkit-transform .5s ease;
+        transition: transform .5s ease;
+        transition: transform .5s ease, -webkit-transform .5s ease;
+        transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        background: red;
+    }
+
     .container {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -126,7 +286,7 @@
         margin: 0;
         padding: 0;
     }
-        
+
     .checklist__title {
         font-size: 2.125em;
         font-weight: 500;
@@ -306,6 +466,130 @@
         margin-top: .25em;
     }
 
+    .info-container .info {
+        margin-top: .55em;
+        margin-bottom: .2em;
+        padding-bottom: .75em;
+        border-bottom: 1px solid #b5adde;
+    }
+
+    .checklist .open .info-container {
+        max-height: 500px;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    .social {
+        font-size: 1.25em;
+        margin-top: 1.75em;
+        text-align: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    .social-buttons {
+        display: block;
+        margin-top: 12px;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+        background: 0 0;
+    }
+
+    .social-buttons a {
+        display: inline-block;
+        width: 37px;
+        height: 37px;
+        cursor: pointer;
+        border: 2px solid #e6e6e6;
+        border-radius: 3px;
+    }
+
+    .social-buttons a.social-buttons__twitter {
+        -webkit-transition: border .2s ease;
+        transition: border .2s ease;
+        background: url(../share-buttons.svg) no-repeat 5px 6px;
+    }
+
+    .social-buttons a.social-buttons__twitter:hover {
+        border: 2px dotted #bf6bfe;
+    }
+
+    .social-buttons a.social-buttons__facebook {
+        margin: 0 7px;
+        -webkit-transition: border .2s ease;
+        transition: border .2s ease;
+        background: url(../share-buttons.svg) no-repeat -27px 6px;
+    }
+
+    .social-buttons a.social-buttons__facebook:hover {
+        border: 2px dotted #bf6bfe;
+    }
+
+    footer {
+        font-weight: 300;
+        margin-top: 1.25em;
+        padding: .85em 1.85em;
+        text-align: center;
+        border-top: 1px solid #57b26e;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    footer span {
+        font-size: 1.45em;
+        font-weight: 500;
+        padding: 0 .175em;
+        vertical-align: middle;
+        color: #bf6bfe;
+    }
+
+    .title-404 {
+        font-size: 6.5em;
+        width: 100%;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .text-404 {
+        font-size: 2.5em;
+    }
+
+    @media print {
+        *,
+        :after,
+        :before,
+        :first-letter,
+        :first-line {
+            color: #000 !important;
+            background: 0 0 !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+        a,
+        a:visited {
+            text-decoration: underline;
+        }
+        a[href]:after {
+            content: ' (' attr(href) ')';
+        }
+        abbr[title]:after {
+            content: ' (' attr(title) ')';
+        }
+        a[href^='#']:after,
+        a[href^='javascript:']:after {
+            content: '';
+        }
+        img {
+            page-break-inside: avoid;
+        }
+        h2 {
+            orphans: 3;
+            widows: 3;
+            page-break-after: avoid;
+        }
+    }
+
     </style>
 </head>
 
@@ -409,8 +693,7 @@
                                     <p><b>Supplies You Need</b></p>
                                 </div>
                                 <div class="container">
-                                <div class="content">
-                                   <section class="checklist">
+        <section class="checklist">
             <h2 class="checklist__title">Performance</h2>
             <span class="checklist__title-border"></span>
             <span class="checklist__percentage-border"></span>
@@ -425,8 +708,8 @@
             </ul>
 
         </section>
-                                </div>
-                                </div>
+
+    </div>
                             </div>
                         </div>
                         <div class="col-md-6">
