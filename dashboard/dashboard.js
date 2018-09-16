@@ -45,11 +45,7 @@ $(function() {
     var userid = localStorage.getItem('userid');
     var winStorage = window.localStorage;
     var havesupplies = winStorage.getItem("havesupplies");
-    console.log(havesupplies);
-    firebase.database().ref('users/' + userid+'/supplies').set({
-      supplies: supplieshave
-    });
-
+    
     var data = {
         "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
         "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
