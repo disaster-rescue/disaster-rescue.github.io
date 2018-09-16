@@ -1,6 +1,6 @@
 var data = {
-        "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
-        "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
+    "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
+    "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
 }
 
 function generateSupplyList(val) {
@@ -8,12 +8,12 @@ function generateSupplyList(val) {
     doit(listof, val);
 }
 
-function doit(listof, supplies){
+function doit(listof, supplies) {
     console.log(listof, supplies);
-    
+
     for (var i = 0; i < listof.length; i++) {
         var data;
-        if(supplies.includes(listof[i])){
+        if (supplies.includes(listof[i])) {
             data = "<li class='supply-item verified'><i>" + listof[i] + "</i> <i class='ti-check'></i></li>";
         } else {
             data = "<li class='supply-item'>" + listof[i] + "</li>";
@@ -22,7 +22,7 @@ function doit(listof, supplies){
     }
 }
 
-function generateRequestedList(listof){
+function generateRequestedList(listof) {
     console.log(listof);
     for (var i = 0; i < listof.length; i++) {
         console.log(listof, listof[i]);
@@ -32,17 +32,23 @@ function generateRequestedList(listof){
 }
 
 $(function() {
-    var userid = sessionStorage.getItem('userid');
+    var userid = localStorage.getItem('userid');
 
     var data = {
         "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
         "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
     }
     var database = firebase.database();
+    firebase.database().ref('states').once('value').then(function(snapshot) {
+        if (snapshot.exists()) {
+            data = snapshot.val();
+            console.log(data);
+        }
+    });
     firebase.database().ref('/users/' + userid + "/name").once('value').then(function(snapshot) {
         if (snapshot.exists()) {
             var valu = snapshot.val();
-            $("#heythere").html("Hey there, " + valu + ". Welcome back!");    
+            $("#heythere").html("Hey there, " + valu + ". Welcome back!");
         }
     });
     firebase.database().ref('/users/' + userid + "/supplies").once('value').then(function(snapshot) {
@@ -54,7 +60,7 @@ $(function() {
                 console.log(itemVal);
                 vals.push(itemVal);
             });
-        } 
+        }
         generateSupplyList(vals);
     });
     firebase.database().ref('/users/' + userid + "/requested").once('value').then(function(snapshot) {
@@ -66,8 +72,55 @@ $(function() {
                 console.log(itemVal);
                 vals.push(itemVal);
             });
-        } 
+        }
         generateRequestedList(vals);
+    });
+
+
+    Chart.defaults.scale.gridLines.display = false;
+    var ctx = document.getElementById('bar-chart').getContext('2d');
+    var bar = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Earthquakes", "Drought", "Wildfire"],
+            datasets: [{
+                label: "supplies owned / supplies needed",
+                backgroundColor: ["#E87B48", "#4EA171", "#E8AD42"],
+                data: [0.20, 0.60, 0.40]
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Preparedness level'
+            },
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                gridLines: {
+                    display: "none",
+                }
+            }],
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0
+                    }
+                }]
+            },
+            yAxes: [{
+
+                gridLines: {
+                    display: "none",
+                }
+            }]
+        }
     });
 
 });

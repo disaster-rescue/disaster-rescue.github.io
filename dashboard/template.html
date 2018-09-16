@@ -32,9 +32,8 @@
     firebase.initializeApp(config);
     </script>
     <style>
-    
     .listy {
-        
+
         list-style: none;
         padding-left: 10px;
         font-size: 18px;
@@ -42,8 +41,10 @@
         padding-bottom: 14px;
     }
 
-    .parent-div { text-align: center; }
-    
+    .parent-div {
+        text-align: center;
+    }
+
     .content {
         padding-bottom: 1.5em!important;
     }
@@ -51,7 +52,7 @@
     button {
         border-color: #f26752!important;
         color: #f26752!important;
-        margin-right: 0.5em;
+        margin-right: 0.75em!important;
     }
 
     button:hover {
@@ -77,7 +78,7 @@
         font-size: 1.1em;
     }
 
-    #itemreq{
+    #itemreq {
         border: 1px solid rgb(200, 200, 200)!important;
     }
 
@@ -85,7 +86,7 @@
         padding-top: 0px !important;
     }
 
-    .limited{
+    .limited {
         max-height: 30em;
         overflow: scroll;
     }
@@ -99,7 +100,7 @@
     optgroup,
     select,
     textarea {
-        
+
         font-size: 100%;
         line-height: 1.15;
         margin: 0;
@@ -114,7 +115,6 @@
     select {
         text-transform: none;
     }
-
     </style>
 </head>
 
@@ -124,7 +124,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                    ResQ
+                    ResQ user
                 </a>
                 </div>
                 <ul class="nav">
@@ -142,14 +142,8 @@
                     </li>
                     <li>
                         <a href="donate.html">
-                            <i class="ti-money"></i>
-                            <p>Donate</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html">
-                        <i class="ti-info"></i>
-                        <p>About</p>
+                            <i class="ti-user"></i>
+                            <p>User Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -197,10 +191,10 @@
                         <div class="col-md-12">
                             <div class="card ">
                                 <div class="header">
-                                    <p><b>Natural Disaster Areas</b></p>
+                                    <p><b>Disasters Most Likely to Occur in Your Area</b></p>
                                 </div>
                                 <div class="content">
-                                    <img src="/dashboard/assets/img/disaster_map.jpg">
+                                    <canvas id="bar-chart" width="800" height="300"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -210,10 +204,10 @@
                             <div class="card ">
                                 <div class="header">
                                     <p><b>Supplies You Need</b></p>
-                                <div class="content">
-                                     <ul id="supplylist">
-                                    </ul>
-                                </div>
+                                    <div class="content">
+                                        <ul id="supplylist">
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -235,13 +229,12 @@
                                     <ul class="requested">
                                     </ul>
                                     <div class="row">
-                                    <form id="form" class="col-xs-10">
-                                        <div class="form-group">
-                                            <input class="form-control" id="itemreq" placeholder="Add Item">
-                                        </div>
-                                        
-                                    </form>
-                                    <img class="col-xs-2" src="assets/img/send-button.svg" width="30px" height="30px"></div>
+                                        <form id="form" class="col-xs-10">
+                                            <div class="form-group">
+                                                <input class="form-control" id="itemreq" placeholder="Add Item">
+                                            </div>
+                                        </form>
+                                        <img class="col-xs-2" src="assets/img/send-button.svg" width="30px" height="30px"></div>
                                 </div>
                             </div>
                         </div>
@@ -276,6 +269,7 @@
 <script src="assets/js/bootstrap-notify.js"></script>
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 <script src="dashboard.js"></script>
 
