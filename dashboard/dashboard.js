@@ -9,6 +9,7 @@ function generateSupplyList(val) {
 }
 
 function doit(listof, supplies){
+    console.log(listof, supplies);
     
     for (var i = 0; i < listof.length; i++) {
         var data;
