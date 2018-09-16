@@ -1,7 +1,8 @@
 var data = {
         "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
         "massachusetts": ["food", "water", "radio", "first-aid", "flashlight", "blankets"]
-    }
+}
+
 function generateSupplyList(val) {
     var listof = data['massachusetts'];
     doit(listof, val);
@@ -20,16 +21,12 @@ function doit(listof, supplies){
     }
 }
 
-function generateRequestedList(val){
-    
+function generateRequestedList(listof){
+    console.log(listof);
     for (var i = 0; i < listof.length; i++) {
-        var data;
-        if(supplies.includes(listof[i])){
-            data = "<li class='supply-item verified'><i>" + listof[i] + "</i> <i class='ti-check'></i></li>";
-        } else {
-            data = "<li class='supply-item'>" + listof[i] + "</li>";
-        }
-        $("#supplylist").append(data);
+        console.log(listof, listof[i]);
+        var data = "<li class='supply-item'>" + listof[i] + "</li>";
+        $(".requested").append(data);
     }
 }
 
@@ -48,18 +45,28 @@ $(function() {
         }
     });
     firebase.database().ref('/users/' + userid + "/supplies").once('value').then(function(snapshot) {
+        var vals = [];
         if (snapshot.exists()) {
             var counts = [];
-            var vals = [];
             snapshot.forEach(function(item) {
                 var itemVal = item.val();
                 console.log(itemVal);
                 vals.push(itemVal);
             });
-            generateSupplyList(vals);
-        } else {
-            //do nothing
-        }
+        } 
+        generateSupplyList(vals);
+    });
+    firebase.database().ref('/users/' + userid + "/requested").once('value').then(function(snapshot) {
+        var vals = [];
+        if (snapshot.exists()) {
+            var counts = [];
+            snapshot.forEach(function(item) {
+                var itemVal = item.val();
+                console.log(itemVal);
+                vals.push(itemVal);
+            });
+        } 
+        generateRequestedList(vals);
     });
 
 });

@@ -72,6 +72,12 @@
     .card .content {
         padding-top: 0px !important;
     }
+
+    .limited{
+        max-height: 30em;
+        overflow: scroll;
+    }
+
     </style>
 </head>
 
@@ -138,7 +144,7 @@
                                     <p id="heythere">Hey there, -name-. Welcome back!</p>
                                 </div>
                                 <div class="content">
-                                    <button id="help" class="btn btn-primary">Call for Help</button>
+                                    <button id="help" class="btn btn-primary">Get Help</button>
                                     <button id="help-others" class="btn btn-primary">Help Others Nearby</button>
                                 </div>
                             </div>
@@ -149,18 +155,6 @@
                             <div class="card ">
                                 <div class="header">
                                     <p>Likely natural disaster</p>
-                                </div>
-                                <div class="content">
-                                    content stuff
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card ">
-                                <div class="header">
-                                    <p>Learn more</p>
                                 </div>
                                 <div class="content">
                                     content stuff
@@ -192,17 +186,32 @@
                                     </ul>
                                     <hr>
                                     <p><b>Request Supplies</b></p>
+                                    <p>Let rescue orgs know what you need so that they can help you better.</p>
                                     <p>Already requested:</p>
                                     <ul class="requested">
                                     </ul>
                                     <div class="row">
                                     <form id="form" class="col-xs-10">
                                         <div class="form-group">
-                                            <input class="form-control" id="itemreq" placeholder="Item">
+                                            <input class="form-control" id="itemreq" placeholder="Add Item">
                                         </div>
                                         
                                     </form>
                                     <img class="col-xs-2" src="assets/img/send-button.svg" width="30px" height="30px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card  limited">
+                                <div class="header">
+                                    <p><b>Learn more<b></p>
+                                </div>
+                                <div class="content">
+                                    <iframe width="280" height="200" src="https://www.youtube.com/embed/CuUXdQI5LLs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    <iframe width="280" height="200" src="https://www.youtube.com/embed/DcFCY1OFhCw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    <iframe width="280" height="200" src="https://www.youtube.com/embed/G57gCZGEPK0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
