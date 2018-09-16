@@ -72,10 +72,10 @@ $(function() {
         }
     });
 
-    var login = window.localStorage.getItem("logined");
+    var login = window.localStorage.getItem("login");
     console.log(login);
     
-    if(login === "true"){
+    if(login!=null && login === "true"){
         $(".location").hide();
         $("#register").hide();
         $("#register-header").hide();
