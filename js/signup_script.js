@@ -49,14 +49,14 @@ function checkUser(userid) {
 
 function goToDashboard(userid) {
     sessionStorage.setItem("userid", userid);
-    window.location.href = 'file:///Users/connieye/Documents/resq/dashboard/template.html'
+    window.location.href = 'https://disaster-rescue.github.io/dashboard/template.html'
     //alert(userid + " going to dashboard");
 }
 
 function goToSetup(userid) {
     sessionStorage.setItem("userid", userid);
-    //window.location.href = 'file:///Users/connieye/Documents/resq/dashboard/template.html'
-    //alert(userid + " going to setup");
+    //should go to "chatbot"
+    window.location.href = 'https://disaster-rescue.github.io/dashboard/template.html'
 }
 
 function signalNoUser() {
@@ -69,11 +69,27 @@ $(function() {
             return this.text(this.text() == b ? a : b);
         }
     });
-    $(".location").hide();
-    $("#register").show();
-    $("#register-header").show();
-    $("#signin").hide();
-    $("#signin-header").hide();
+
+    var login = localStorage.getItem("logined");
+
+    
+    if(login){
+        $(".location").hide();
+        $("#register").hide();
+        $("#register-header").hide();
+        $("#signin").show();
+        $("#signin-header").show();
+        $("#inputName").hide();
+
+    } else{
+        $(".location").hide();
+        $("#register").show();
+        $("#register-header").show();
+        $("#signin").hide();
+        $("#signin-header").hide();
+        $("#inputName").show();
+    }
+    
 
     $('#toggle').click(function() {
         $('#register').toggle();
