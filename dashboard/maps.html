@@ -213,7 +213,7 @@
         function initMap() {
             var points = [];
 
-            fetch('http://209.97.149.77/tweets').then(function (response) {
+            fetch('https://hackmit.drew.hu/tweets').then(function (response) {
                 return response.json();
             }).then(function (data) {
                 data.forEach(function (elem) {
