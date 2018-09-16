@@ -19,7 +19,7 @@ body.signuppage{
     padding-top: 10%;
     color: rgb(255, 255, 255)!important;
     font-family: 'Muli', 'Helvetica', 'sans-serif';
-    background-image: url("forest_medium.jpg");
+    background-image: url("../assets/forest_medium.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
