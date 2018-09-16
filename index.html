@@ -7,67 +7,195 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
 
-    <title>setup</title>
-    <link rel='stylesheet' href='assets/intro.css'>
+    <title>ResQ Disaster Preparedness</title>
+    
 </head>
-<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <style>
+        @font-face {
+    font-family: "sfp";
+    src: url("dashboard/assets/fonts/SofiaProRegular.6ad63661.ttf")
+}
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "sfp";
+        height: 100vh;
+        background: #E8554E;
+        color: white
+    }
 
-<script>
-    var config = {
-        apiKey: "AIzaSyB2tHG_FOrofs7uOvi4YhYLdnySQcH9sUc",
-        authDomain: "resqueq.firebaseapp.com",
-        databaseURL: "https://resqueq.firebaseio.com",
-        projectId: "resqueq",
-        storageBucket: "",
-        messagingSenderId: "345720470023"
-    };
-    firebase.initializeApp(config);
-</script>
-<script src="js/firebase_database.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    .top {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 1.4em;
+        line-height: 2.8em;
+        color: hsla(0, 0%, 100%, .7);
+    }
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    .top li {
+        margin-left: 64px;
+    }
+
+    #navvy {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+
+    }
+
+    #logo {
+        font-weight: 800;
+        font-size: 1.5em;
+        color: white;
+        line-height: 1.73em;
+        margin-left: 0;
+    }
+
+    #bod {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+    }
+
+    #bigboi {
+        font-size: 5em;
+        margin-top: 1.4em;
+        color: white; line-height:1.2em
+    }
+
+    #descript {
+        font-size: 2em
+    }
+
+    #bod {
+        display: flex
+    }
+
+    #lefty {
+        flex-basis: 50%;
+
+        max-width: 50%
+    }
+
+    #donate {
+        flex-basis: 41.66667%;
+        height: 80vh;
+        max-width: 41.66667%;
+    }
+    #form-cont {
+        background: white;
+
+margin: 25% 30%;
+
+height: 400px;
+
+width: 420px;
+
+border-radius: 5px;
+padding: 20px;
+color:black;
+text-align:center
+    }
+
+    .reg {
+        float: right
+    }
+    input[type='text'] {
+        height: 48px;
+max-width: 100%;
+/* padding: 0 16px; */
+border: 1px solid #f1f1f1;
+background: #fff;
+color: rgba(3,27,78,.7);
+transition: all .25s cubic-bezier(.645,.045,.355,1);
+border-radius: 5px;
+width: 90%;
+position: relative;
+padding: 0 15px;
+    }
+
+    #donate-sub {
+        background: #E8554E;
+        cursor:pointer;
+
+width: 90%;
+
+height: 50px;
+margin-top: 20px;
+
+border-radius: 5px;
+
+border: 2px solid #E8554E;
+
+font-size: 1.4em;
+
+color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    a:hover {
+        color: lightgrey
+    }
+    #card_num {
+        width: 50%;
+        float:left;
+        margin-left: 22px;
+    }
+    #cvc_num {
+        width: 20%;
+        float: right;
+        margin-right: 22px;
+    }
+    
+</style>
 
 <body>
-    <div class="row-big"></div>
-        <h1 class="title">Welcome to ResQ</h1>
-    <div class="row">
-       <div class="column">
-        <h1 class="intro">I am...</h1>
-       </div>
-        <div class="column">
-
-         <a id="f1" class="btn-xl btn-haha" onclick="func1()">an individual</a>
-         <div class="j1"></div>
-            <a id="f2" class="btn-xl btn-hehe" onclick="func2()">an organization</a>
+    <header>
+        <nav id="navvy">
+            <ul class="top">
+                <li id="logo"><a href="/">ResQ</a></li>
+                <li><a href="/maps.html">Disaster Map</a></li>
+                <li><a href="/analytics.html">Analytics</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li style="margin-left: 35% !important;"><a href="/login.html">Login</a></li>
+                <li style="margin-left:40px;"><a href="/signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="bod">
+        <div id="lefty">
+            <h1 id=bigboi>
+                Are you prepared for the worst?
+            </h1>
+            <p id="descript">
+                60% of Americans are not ready for the next disaster. <a style="text-decoration: underline" href="/signup.html">Get started</a> now to protect you and your loved ones.
+            </p>
         </div>
-
+        <div id="donate">
+            <div id="form-cont">
+                <h1 style="font-weight:800">Save lives.</h1>
+                <h1 style="color: #E8554E;font-weight:800">Donate Today.</h1>
+                <input placeholder="Donation Amount" style="margin: 10px 20px;width:82%" type="text">
+                <input placeholder="Card Number" id="card_num" type="text">
+                <input placeholder="CVC" id="cvc_num" type="text">
+                <button id="donate-sub">Donate</button>
+            </div>
         </div>
-<script>
-    var ha=false;
-    function func1(){
-        if(!ha)
-        $(".btn-haha") .after(" <div class='j1'></div>"+"<a id='f3' class= 'btn-hoho' onclick ='func3()'>Login </a> " +
-             "<div class='j1'></div>"+" <a id='f4' class= 'btn-hihi' onclick ='func4()'>Register </a> ");
-        $('#f1').hide();
-        $('#f2').hide();
-        ha=true;
-    }
-    function func2(){
+    </div>
 
-    }
-    function func3(){
-        localStorage.setItem("logined",true);
-        window.location="signup.html";
-
-    }
-    function func4(){
-        localStorage.setItem("logined",false);
-        window.location="signup.html"
-    }
-</script>
 </body>
+
 
 </html>
