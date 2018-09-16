@@ -4,6 +4,7 @@ var user;
 var database = firebase.database();
 
 function signup(userid, name, password) {
+    if("userid"==="") return;
     user = userid;
     database.ref("users/" + userid).set({
         name: name,
@@ -80,6 +81,7 @@ $(function() {
         $("#signin").show();
         $("#signin-header").show();
         $("#inputName").hide();
+        $("#toggle").html('Make a new account');
 
     } else{
 
@@ -89,6 +91,7 @@ $(function() {
         $("#signin").hide();
         $("#signin-header").hide();
         $("#inputName").show();
+        $("#toggle").html('Already have an account?');
     }
     
 
