@@ -1613,7 +1613,7 @@ textarea.form-control {
   width: 190px; }
 
 .card-map .map {
-  height: 500px;
+  height: 80vh;
   padding-top: 20px; }
   .card-map .map > div {
     height: 100%; }
