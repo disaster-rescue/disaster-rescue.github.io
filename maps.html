@@ -147,6 +147,12 @@
                 data.forEach(function (elem) {
                     var parts = elem[3].split(',');
                     points.push(new google.maps.LatLng(parseFloat(parts[0]), parseFloat(parts[1])));
+		    var multiple = Math.floor(elem[6]);
+		    for(var i=0; i <multiple;i++){
+			var fudge = function(){return Math.random()/100 - 0.005;}
+		        points.push(new google.maps.LatLng(parseFloat(parts[0])+fudge(), parseFloat(parts[1])+fudge()));
+		    }
+		    console.log(multiple);
                 });
             }).then(function () {
                 map = new google.maps.Map(document.getElementById('map'), {
