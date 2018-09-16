@@ -74,7 +74,7 @@ $(function() {
     var login = sessionStorage.getItem("logined");
     console.log(login);
     
-    if(login === true){
+    if(login === "true"){
         $(".location").hide();
         $("#register").hide();
         $("#register-header").hide();
