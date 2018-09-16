@@ -45,6 +45,13 @@ $(function() {
     var userid = localStorage.getItem('userid');
     var winStorage = window.localStorage;
     var havesupplies = winStorage.getItem("havesupplies");
+
+    $("#sendit").click(function(){
+        var txtval = $("#itemreq").val();
+        $("#itemreq").val("");
+        var data = "<li class='supply-item'>" + txtval + "</li>";
+        $(".requested").append(data);
+    });
     
     var data = {
         "california": ["food", "water", "radio", "first-aid", "flashlight", "protective goggles"],
