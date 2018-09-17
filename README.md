@@ -3,4 +3,7 @@ HackMIT 2018 \
 Team Meat Magic \
 Table J5
 
-plz
+credits
+-----
+icons from flaticon.com
+website template modified from Creative Tim
